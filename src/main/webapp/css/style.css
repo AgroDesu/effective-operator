@@ -1,0 +1,119 @@
+/* I personally require this */
+* { box-sizing: border-box; }
+
+body {
+    background-image: url('../img/webb.png');
+}
+
+header {
+    background: url('../img/background-2.jpg') center no-repeat;
+    background-size: cover;
+}
+
+nav, footer {
+    box-shadow: black 0 0 5px;
+}
+
+#main-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border: solid #ffc107 2px;
+    box-shadow: black 0 0 1px;
+}
+
+h1 {
+    color: #333;
+    background: #ffc107;
+    margin: -10px -20px 10px;
+    padding: 0 10px 5px;
+    text-align: center;
+}
+
+h6 {
+    text-align: center;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#loginformerror {
+    text-align: center;
+    color: red;
+    text-shadow: black 1px 1px 1px;
+}
+
+.credits {
+    height: 0.8em; 
+    margin-top: -3px;
+}
+
+footer {
+    border-radius: 0;
+}
+/* Employee Profile Table */
+#employeeprofile {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    color: #333;
+}
+#employeeprofile, #employeeprofile th, #employeeprofile td {
+    border: 1px solid black;
+}
+#employeeprofile th, #employeeprofile td {
+    padding: 0 10px;
+}
+#employeeprofile th {
+    background-color: #ffc107;
+}
+
+#employeeprofile td {
+    background-color: #eee;
+}
+
+#epPhoto {
+    margin: 0; padding: 0!important;
+    width: 100px;
+}
+
+/* Table Form */
+#tableForm {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    color: #333;
+}
+#tableForm, #tableForm th, #tableForm td {
+    border: 1px solid black;
+}
+
+#tableForm th, #tableForm td {
+    padding: 0 10px;
+}
+
+#tableForm th {
+    background-color: #ffc107;
+}
+
+#tableForm td {
+    background-color: #eee;
+}
+
+.partymode--flake {
+    height: 50px;
+}
+
+/* Modal Stuff */
+.modal-content {
+    overflow:hidden;
+    background-color: transparent;
+}
+
+.modal-header {
+    border-bottom:1px solid #333;
+}
+
+.modal-footer {
+    border-top: 0;
+}
