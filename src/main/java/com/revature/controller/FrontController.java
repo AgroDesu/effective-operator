@@ -1,5 +1,7 @@
 package com.revature.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +13,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.beans.Employee;
+import com.revature.beans.Form;
 import com.revature.beans.FormFields;
 import com.revature.services.EmployeeService;
+import com.revature.services.FormService;
 
 @RestController
 public class FrontController {
 	@Autowired
 	EmployeeService empService;
+	@Autowired
+	FormService formService;
 	
 	@GetMapping("/login")
 	public ResponseEntity<Employee> checkLoggedIn(HttpSession session) {
@@ -53,7 +59,25 @@ public class FrontController {
 	
 	@DeleteMapping("/logout")
 	public ResponseEntity<Employee> logout(HttpSession session) {
+		System.out.println("Attempting log out.");
 		session.removeAttribute("logged");
 		return ResponseEntity.noContent().build();
+	}
+	
+	@GetMapping("/getforms")
+	public ResponseEntity<List<Form>> getForms(HttpSession session) {
+		// Check if employee is logged in
+		if (session.getAttribute("logged") == null) {
+			return ResponseEntity.noContent().build();
+		}
+		
+		Employee emp = (Employee) session.getAttribute("logged");
+		List<Form> forms = formService.getForms(emp);
+		
+		if (forms != null && forms.size() > 0) {
+			return ResponseEntity.ok(forms);
+		} else {
+			return ResponseEntity.notFound().build();
+		}
 	}
 }

@@ -1,5 +1,6 @@
 package com.revature.beans;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,6 +17,7 @@ public class Comment {
 	@SequenceGenerator(name="comments", sequenceName="comments_seq", allocationSize=1)
 	@GeneratedValue(generator="comments", strategy=GenerationType.SEQUENCE)
 	private int id;
+	@Column(name="commentbody")
 	private String commentBody;
 	@ManyToOne
 	@JoinColumn(name="emp_from")

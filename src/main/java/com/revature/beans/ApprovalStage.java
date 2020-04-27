@@ -2,8 +2,10 @@ package com.revature.beans;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="approvalstatus")
 public class ApprovalStage {
 	@Id
 	private long id;
